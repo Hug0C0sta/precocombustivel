@@ -4,8 +4,43 @@
 @theme {
   --color-primary: #0f172a;
   --color-secondary: #059669;
-  --color--tertiary: #0284c7;
+  --color-tertiary: #0284c7;
   --color-neutral: #64748b;
+  --color-bg: #f8f9ff;
+  --color-nav-bar: white;
   --font-space: "Space Grotesk", sans-serif;
   --font-hanken: "Hanken Grotesk", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --color-primary: #0f172a;
+  --color-secondary: #059669;
+  --color-tertiary: #0284c7;
+  --color-neutral: #64748b;
+  --color-bg: #f8f9ff;
+  --color-nav-bar: white;
+}
+.dark {
+  color-scheme: dark;
+  --color-primary: #10b981;
+  --color-secondary: #38bdf8;
+  --color-tertiary: #f59e0b;
+  --color-neutral: #94a3b8;
+  --color-bg: #09111f;
+  --color-nav-bar: #111c2e;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: var(--color-nav-bar);
+  }
 }

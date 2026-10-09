@@ -1,9 +1,13 @@
+import Filters from "./components/Filters";
+import NavBar from "./components/NavBar";
+
 function App() {
   return (
     <>
-      <section id="center">
-        
-      </section>
+      <NavBar />
+      <main className="max-w-7xl bg-bg">
+        <Filters />
+      </main>
     </>
   );
 }
