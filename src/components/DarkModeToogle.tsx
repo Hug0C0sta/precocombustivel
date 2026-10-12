@@ -1,12 +1,15 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(
-    () => localStorage.getItem("vite-ui-theme") === "dark",
-  );
+  const { theme, toggleTheme } = useTheme();
+
+  const [isDarkMode, setIsDarkMode] = useState(theme === "dark");
 
   useEffect(() => {
+    toggleTheme();
+
     document.documentElement.classList.toggle("dark", isDarkMode);
 
     localStorage.setItem("vite-ui-theme", isDarkMode ? "dark" : "light");

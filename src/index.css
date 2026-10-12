@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #0f172a;
   --color-secondary: #059669;
   --color-tertiary: #0284c7;
   --color-neutral: #64748b;
   --color-bg: #f8f9ff;
-  --color-nav-bar: white;
+  --color-elements: #eff4ff;
+  --color-nav-bar: #ffffff;
   --font-space: "Space Grotesk", sans-serif;
   --font-hanken: "Hanken Grotesk", sans-serif;
 }
@@ -19,16 +22,19 @@
   --color-tertiary: #0284c7;
   --color-neutral: #64748b;
   --color-bg: #f8f9ff;
-  --color-nav-bar: white;
+  --color-elements: #eff4ff;
+  --color-nav-bar: #ffffff;
 }
+
 .dark {
   color-scheme: dark;
-  --color-primary: #10b981;
+  --color-primary: #e5edf8;
   --color-secondary: #38bdf8;
-  --color-tertiary: #f59e0b;
+  --color-tertiary: #fbbf24;
   --color-neutral: #94a3b8;
-  --color-bg: #09111f;
-  --color-nav-bar: #111c2e;
+  --color-bg: #0b1220;
+  --color-elements: #151f30;
+  --color-nav-bar: #0b1220;
 }
 
 @layer base {
@@ -40,7 +46,22 @@
     margin: 0;
     padding: 0;
   }
+
   body {
-    background-color: var(--color-nav-bar);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: var(--font-hanken);
+  }
+
+  @keyframes dropdownEnter {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
