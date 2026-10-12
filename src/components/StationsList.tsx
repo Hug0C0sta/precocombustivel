@@ -167,7 +167,7 @@ function StationCard({ station, distance }: StationCardProps) {
 export default function StationsList() {
   const { data: stations = [], isLoading, isError } = useFuelStations();
 
-  const { location, coordinates, radius } = useFilters();
+  const { coordinates, radius } = useFilters();
 
   const nearbyStations = coordinates
     ? stations
